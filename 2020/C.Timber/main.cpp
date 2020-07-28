@@ -61,6 +61,8 @@ long long solution(vector<Tree>& trees)
 				right_landing.insert(std::pair<long, long>(cur_p, length));
 			}
 
+			if (right_solved.find(cur_p) != right_solved.end()) break;
+
 			if (length > max)
 			{
 				max = length;
@@ -96,6 +98,7 @@ long long solution(vector<Tree>& trees)
 				left_landing.insert(std::pair<long, long>(cur_p, length));
 			}
 
+			if (left_solved.find(cur_p) != left_solved.end()) break;
 
 			if (length > max)
 			{
@@ -134,7 +137,7 @@ int main()
 	std::streambuf* cinbuf = std::cin.rdbuf(); //save old buf
 	std::cin.rdbuf(in.rdbuf()); //redirect std::cin to in.txt!
 
-	std::ofstream out("timber_output.txt");
+	std::ofstream out("timber_output2.txt");
 	std::streambuf* coutbuf = std::cout.rdbuf(); //save old buf
 	std::cout.rdbuf(out.rdbuf()); //redirect std::cout to out.txt!
 
